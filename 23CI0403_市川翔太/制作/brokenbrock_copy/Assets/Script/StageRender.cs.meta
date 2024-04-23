@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d8ab01350d597b24e85c6115e849c6f7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Enemy: {fileID: 836228311488503929, guid: 5e3de39c76b464b42aee15c8954c7bfb, type: 3}
+  - Enemy2: {fileID: 7343367239719364948, guid: b6f6aebc4c61d6c4cbbc1c791003ce28, type: 3}
+  - StageWall: {fileID: 424437800309104763, guid: 3ba652ef384537848946092bd24d1900, type: 3}
+  - ball: {fileID: 4921719762560438158, guid: 3b14455ab83df834cbd45fa9ea6da858, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
