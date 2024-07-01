@@ -7,8 +7,7 @@ public class BallController : MonoBehaviour
                //スピード
     public float speed;
     new Rigidbody2D rigidbody;
-    float lastYPosition;
-    float yTime;
+
     
 
     // Start is called before the first frame update
@@ -22,8 +21,7 @@ public class BallController : MonoBehaviour
         rigidbody.velocity = vec;
         StageRender stageRender = FindObjectOfType<StageRender>();
         stageRender.BallPurus();
-        lastYPosition=transform.position.y;
-        yTime = 0f;
+
     }
 
     // Update is called once per frame
@@ -51,48 +49,19 @@ public class BallController : MonoBehaviour
             transform.position = worldpos;
 
         }
-        else
-        {
-            // Y座標の変化をチェックし、一定期間変わらなかった場合に角度を変更
-            CheckPositionChange();
-        }
+        
         
         
         
     }
     
     
-    private void CheckPositionChange()
-    {
-        
-        float currentYPosition = transform.position.y;
-        
-        if (currentYPosition == lastYPosition)
-        {
-            yTime += Time.deltaTime;
 
-            // ある程度の時間が経過したら
-            if (yTime >= 120) // 2秒と仮定
-            {
-                ChangeAngle(); // 角度を変更する処理を呼ぶ
-            }
-        }
-        else
-        {
-            // Y座標が変わった場合はリセット
-            lastYPosition = currentYPosition;
-            yTime = 0f;
-        }
-    }
-    void ChangeAngle()
-    {
-        
-        transform.Rotate(Vector3.forward, 30.0f); //横跳びになった場合に30度の傾きを追加
-    }
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
        
-        if(collision.transform.tag=="Player"||collision.transform.tag=="Block") //switchでもいいかも?
+        if(collision.transform.tag=="Player"||collision.transform.tag=="Block") 
         {
             Vector2 PLPos=collision.transform.position;
             Vector2 BallPos= transform.position;
@@ -102,6 +71,19 @@ public class BallController : MonoBehaviour
             
             }
             rigidbody.velocity = direction * speed;
+        }
+        if (collision.transform.tag == "wall")
+        {
+            Vector3 direction=collision.rigidbody.velocity;
+            
+                direction.x = -direction.x;
+            
+            
+        }
+        if(collision.transform.tag == "Up")
+        {
+            Vector3 direction=-collision.rigidbody.velocity;
+            direction.y = -direction.y;
         }
         
     }

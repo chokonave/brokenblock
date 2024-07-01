@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: "2023\u5E74\u5EA6_\u9032\u7D1A\u5236\u4F5C_\u30D6\u30ED\u30C3\u30AF\u5D29\u3057_\u5E02\u5DDD\u7FD4\u592A"
+  productName: "\u30D6\u30ED\u30C3\u30AF\u5D29\u3057_\u5E02\u5DDD\u7FD4\u592A"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.12156863, g: 0.12156863, b: 0.1254902, a: 1}
@@ -133,7 +133,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 1.0
+  bundleVersion: 1.1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
